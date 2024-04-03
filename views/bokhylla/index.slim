@@ -1,0 +1,16 @@
+h1 YOUR TO BE READ
+
+form action="/bokhylla" method="post" 
+    input type="text"name="name" placeholder="Titel på book"
+    input type="text"name="author_id" placeholder="id för författare"
+    input type="submit" value="Skapa Book"
+
+
+ol
+  - bokhylla.each do |book|
+    li 
+      a href="bokhylla/#{book['Book_Id']}" #{book["name"]}
+      a href="bokhylla/#{book['Book_Id']}/edit" Uppdatera 
+      form method="POST" action="bokhylla/#{book['Book_Id']}/delete"
+        input type="submit" value="Delete"
+
