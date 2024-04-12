@@ -1,4 +1,47 @@
-h2 ALLA DINA...
+doctype html
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title My Library
+    link rel="stylesheet" href="/css/styles.css" 
+    
+  body
+    div.container
+      h2 Ny bok som du vill lägga till?
+      form action="/tbrs/new" method="post"
+        input type="text" name="book_title" placeholder="Titel på bok" class="input-field"
+        input type="text" name="author_name" placeholder="Författarens namn" class="input-field"
+        input type="text" name="pages" placeholder="Antal sidor" class="input-field"
+        input type="submit" value="Skapa bok" class="btn-primary"
 
-- tbrs.each do |tbr|
-    p = tbr["content"]
+      h2 ALLA DINA TBRS #{session[:id]}!
+      ol
+        - tbrs.each do |tbr|
+          li
+            .book-container
+                a href="tbrs/#{tbr['id']}" #{tbr["book_title"]} 
+                form method="POST" action="tbrs/#{tbr['id']}/delete"
+                    input type="submit" value="Delete" class="btn-delete"
+                form method="POST" action="tbrs/#{tbr['id']}/already_reading"
+                    input type="submit" value="Already Reading" class="btn-secondary"
+
+      h2 DINA PÅBÖRJADE LÄSNINGAR
+      ol
+        - already_reading.each do |already_reads|
+          li
+            .book-container
+                a href="already_reading/#{already_reads['id']}" #{already_reads["book_title"]}
+                a href="already_reading/#{already_reads['id']}/edit" Uppdatera 
+                form method="POST" action="already_reading/#{already_reads['id']}/delete"
+                    input type="submit" value="Delete" class="btn-delete"
+                form method="POST" action="already_reading/#{already_reads['id']}/finished_books"
+                    input type="submit" value="Finished Reading!" class="btn-secondary"
+
+      h2 DINA LÄSTA :)
+      ol
+        - finished_reading.each do |finished_reads|
+          li
+            a href="finished_reading/#{finished_reads['id']}" #{finished_reads["book_title"]}
+            p Rating: #{finished_reads['rating']}/5 STARS
+            p RATING DATE: #{finished_reads['rated_date']}

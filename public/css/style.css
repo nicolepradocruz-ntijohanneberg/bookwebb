@@ -2,7 +2,7 @@
     --magic-number:2vw;
   }
   
-  body{
+  /* body{
   margin:0;
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
@@ -10,43 +10,136 @@
   font-weight:500;
   color:white;
   position:relative;
-  }
+  } */
   
-  nav {
-    height:100px;
-    background:rgba(80,80,80,0.2);
-    display:flex;
-    justify-content: space-around;
-    align-items:center;
-  }
+nav {
+height:100px;
+background:rgba(80,80,80,0.2);
+display:flex;
+justify-content: space-around;
+align-items:center;
+}
   
-  nav a, nav a:link {
-    color:black;
-    text-decoration:none;
-    text-transform:uppercase;
-    font-size:1.2em;
-    font-weight:900;
-    opacity:0.5;
-  }
+nav a, nav a:link {
+color:black;
+text-decoration:none;
+text-transform:uppercase;
+font-size:1.2em;
+font-weight:900;
+opacity:0.5;
+}
+
+.header {
+padding: 80px; /* some padding */
+text-align: center; /* center the text */
+background: #1abc9c; /* green background */
+color: white; /* white text color */
+}
+
+/* Increase the font size of the <h1> element */
+.header h1 {
+font-size: 40px;
+}
+
+/* Ensure proper sizing */
+* {
+box-sizing: border-box;
+}
+
+/* Column container */
+.row {
+display: flex;
+flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+flex: 30%; /* Set the width of the sidebar */
+background-color: #f1f1f1; /* Grey background color */
+padding: 20px; /* Some padding */
+}
+
+/* Main column */
+.main {
+flex: 70%; /* Set the width of the main content */
+background-color: white; /* White background color */
+padding: 20px; /* Some padding */
+}
+
+.workers-image {
+    max-width: 250px; /* Ändra maximal bredd på bilden */
+    height: auto; /* Behåll proportionerna */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
   
-  
-  img {
-    position:fixed;
-    bottom:0;
-    right:0;
-    width:25vw;
-    margin:0 var(--magic-number) var(--magic-number) 0;
-  }
-  
-  
-  
-  h1 {
-    margin:var(--magic-number);
-  }
-  
-  
-  
-  a, form {
-    display:inline-block;
-    margin:10px;
-  }  
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.input-field {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.btn-primary {
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.btn-secondary {
+background-color: #6c757d;
+color: #fff;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.btn-delete {
+background-color: #dc3545;
+color: #fff;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+ol {
+list-style-type: none;
+padding: 0;
+}
+
+h2 {
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+li {
+margin-bottom: 10px;
+}
+
+.book-container {
+display: flex;
+align-items: center;
+}
+
+.book-container a {
+margin-right: 10px; /* Add space between the book title and the buttons */
+}

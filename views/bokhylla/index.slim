@@ -1,16 +1,29 @@
-h1 YOUR TO BE READ
+doctype html
+html lang="sv"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Boksidan - Populära böcker
+    link rel="stylesheet" href="css/style.css"
+    link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"
+  body
+    header
+      h1 Välkommen till Boksidan
+      p Utforska våra populära böcker
+    .container
+      .genre
+        h2 Skönlitteratur
+        .books-container
+          - bokhylla.each do |book|
+            .book
+              .book-info
+               a href="bokhylla/#{book['Book_Id']}" #{book["name"]}
 
-form action="/bokhylla" method="post" 
-    input type="text"name="name" placeholder="Titel på book"
-    input type="text"name="author_id" placeholder="id för författare"
-    input type="submit" value="Skapa Book"
+ 
 
 
-ol
-  - bokhylla.each do |book|
-    li 
-      a href="bokhylla/#{book['Book_Id']}" #{book["name"]}
-      a href="bokhylla/#{book['Book_Id']}/edit" Uppdatera 
-      form method="POST" action="bokhylla/#{book['Book_Id']}/delete"
-        input type="submit" value="Delete"
-
+/ h2 THE HOTTEST READS RIGHT
+/ ol
+/   - bokhylla.each do |book|
+/     li 
+/       a href="bokhylla/#{book['Book_Id']}" #{book["name"]}

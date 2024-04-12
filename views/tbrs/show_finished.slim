@@ -1,0 +1,16 @@
+h2 Du har läst boken "#{result["book_title"]}".
+
+h1 #{result["book_title"]}
+
+p Titel: #{result['book_title']}
+p Författare: #{result['author_name']}
+p Antal sidor: #{result['pages']}
+
+h1 YOUR RATING OF "#{result["book_title"]}":
+
+p Rating: #{result['rating']}/5 STARS
+p Personal comment: #{result['review']}
+P RATED: #{result['rated_date']}
+
+a href="/rating/#{result['id']}" Uppdatera
+
